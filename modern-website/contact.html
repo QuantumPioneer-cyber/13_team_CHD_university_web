@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 红色社会实践</title>
+    <meta name="description" content="联系红色社会实践团队，了解更多实践活动信息">
+    <meta name="keywords" content="联系我们,红色实践,社会实践,大学生团队">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>红色实践团</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">主页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">实践团队</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">实践活动</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">联系我们</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>联系我们</h1>
+            <p>欢迎与我们交流，共同传承红色精神</p>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h2>联系方式</h2>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-content">
+                                <h3>邮箱地址</h3>
+                                <p>redpractice@university.edu.cn</p>
+                                <p>team.leader@university.edu.cn</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-content">
+                                <h3>联系电话</h3>
+                                <p>团队负责人：138-xxxx-xxxx</p>
+                                <p>指导老师：139-xxxx-xxxx</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🏫</div>
+                            <div class="contact-content">
+                                <h3>学校地址</h3>
+                                <p>长安大学</p>
+                                <p>陕西省西安市长安区南二环中段</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-content">
+                                <h3>联系时间</h3>
+                                <p>周一至周五：9:00 - 18:00</p>
+                                <p>周末：10:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 地图区域 -->
+                <div class="map-section">
+                    <h2>学校位置</h2>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-content">
+                                <div class="map-icon">🗺️</div>
+                                <h3>长安大学</h3>
+                                <p>陕西省西安市长安区</p>
+                                <p>南二环中段</p>
+                                <a href="https://map.baidu.com" target="_blank" class="map-link">在地图中查看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系表单 -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2 class="section-title">留言咨询</h2>
+            <div class="form-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱 *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <select id="subject" name="subject">
+                                <option value="">请选择咨询主题</option>
+                                <option value="practice">实践活动咨询</option>
+                                <option value="cooperation">合作交流</option>
+                                <option value="media">媒体采访</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言内容 *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="请详细描述您的问题或建议..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">发送留言</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社交媒体 -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title">关注我们</h2>
+            <div class="social-grid">
+                <div class="social-card">
+                    <div class="social-icon">📱</div>
+                    <h3>微信公众号</h3>
+                    <p>扫码关注我们的微信公众号，获取最新实践动态</p>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <span>微信二维码</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">🐦</div>
+                    <h3>微博</h3>
+                    <p>关注我们的官方微博，了解实践活动最新资讯</p>
+                    <a href="#" class="social-link">@红色实践团队</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">📺</div>
+                    <h3>视频平台</h3>
+                    <p>观看我们的实践活动视频，感受红色精神传承</p>
+                    <a href="#" class="social-link">红色实践频道</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>如何参与红色社会实践活动？</h3>
+                    <p>我们每年暑期都会组织红色社会实践活动，欢迎有志青年报名参加。具体报名信息请关注我们的官方公告。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>实践活动的主要内容是什么？</h3>
+                    <p>主要包括革命圣地参观、老兵访谈、志愿服务等活动，旨在传承红色基因，践行青春使命。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何获取实践活动的详细资料？</h3>
+                    <p>您可以通过邮件联系我们，或者关注我们的社交媒体账号，我们会定期发布活动资料和成果展示。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>是否接受其他学校的学生参与？</h3>
+                    <p>我们欢迎各高校学生参与交流，具体参与方式请通过邮件或电话与我们联系。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>红色实践团</h3>
+                    <p>传承红色基因，践行青春使命</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="../index.html">主页</a></li>
+                        <li><a href="about.html">实践团队</a></li>
+                        <li><a href="services.html">实践活动</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="微信">📱</a>
+                        <a href="#" aria-label="微博">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 红色社会实践团队. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // 表单提交处理
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // 简单验证
+            if (!name || !email || !message) {
+                alert('请填写必填项！');
+                return;
+            }
+            
+            // 模拟提交成功
+            alert('感谢您的留言！我们会尽快回复您。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
