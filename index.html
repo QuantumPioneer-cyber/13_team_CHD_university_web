@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到我的网站</title>
+    <title>红色社会实践 - 传承红色基因，践行青春使命</title>
+    <meta name="description" content="大学生暑期红色社会实践活动，探访革命圣地，传承红色精神">
+    <meta name="keywords" content="红色实践,社会实践,大学生,革命教育,红色基因">
     <style>
         * {
             margin: 0;
@@ -17,43 +20,126 @@
             color: #333;
         }
 
+        /* 导航栏 */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h2 {
+            color: #4A90E2;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #4A90E2;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4A90E2;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin-top: 80px;
+            height: 90vh;
+            background: linear-gradient(135deg, #E8F4FD 0%, #4A90E2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="flag" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="rgba(255,255,255,0.1)"/><polygon points="5,5 15,5 10,10" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23flag)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out 0.3s both;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: #ff6b6b;
+            padding: 15px 35px;
+            background: #4A90E2;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
         }
 
         .btn:hover {
-            background: #ff5252;
+            background: #2C5282;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
         }
 
         .section {
@@ -71,6 +157,19 @@
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #4A90E2;
+            border-radius: 2px;
         }
 
         .features {
@@ -83,14 +182,17 @@
         .feature-card {
             background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #4A90E2;
         }
 
         .feature-icon {
@@ -102,11 +204,79 @@
             background: #f8f9fa;
         }
 
+        .quick-links {
+            background: #4A90E2;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .link-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .link-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .link-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: white;
+            color: #4A90E2;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -114,75 +284,183 @@
         }
 
         @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.95);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-content p {
                 font-size: 1.1rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>红色实践团</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">主页</a></li>
+                <li><a href="modern-website/about.html" class="nav-link">实践团队</a></li>
+                <li><a href="modern-website/services.html" class="nav-link">实践活动</a></li>
+                <li><a href="实践网站/index.html" class="nav-link">详细展示</a></li>
+                <li><a href="modern-website/contact.html" class="nav-link">联系我们</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
     <!-- 首页英雄区域 -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1>欢迎来到我的网站</h1>
-            <p>简洁、现代、响应式的设计</p>
-            <a href="#about" class="btn">了解更多</a>
+            <h1>传承红色基因，践行青春使命</h1>
+            <p>追寻革命足迹，感悟奋斗精神，在新时代的征程上贡献青春力量</p>
+            <a href="#about" class="btn">了解实践</a>
         </div>
     </section>
 
-    <!-- 关于部分 -->
+    <!-- 实践介绍 -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">关于我们</h2>
+            <h2 class="section-title">实践介绍</h2>
             <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-                这是一个简洁现代的网站首页设计，采用了渐变背景、卡片式布局和平滑动画效果。
-                设计注重用户体验，支持响应式布局，在各种设备上都能完美显示。
+                本次红色社会实践旨在引导青年学生深入学习党史，探访革命圣地，重温峥嵘岁月。
+                通过实地参观、听取讲解、与老兵座谈等形式，我们深刻理解了革命先辈的崇高理想和坚定信念。
+                我们走访了延安、井冈山等革命根据地，不仅学习了历史知识，更在实践中锻炼了意志，提升了社会责任感。
             </p>
         </div>
     </section>
 
-    <!-- 特色功能 -->
+    <!-- 实践活动 -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">特色功能</h2>
+            <h2 class="section-title">实践活动</h2>
             <div class="features">
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>现代设计</h3>
-                    <p>采用最新的设计趋势，简洁美观的界面让用户眼前一亮</p>
+                    <div class="feature-icon">🏛️</div>
+                    <h3>革命圣地参观</h3>
+                    <p>深入延安、井冈山等革命根据地，实地感受革命历史，学习革命精神</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>响应式布局</h3>
-                    <p>完美适配各种设备，无论是手机、平板还是桌面都有最佳体验</p>
+                    <div class="feature-icon">👥</div>
+                    <h3>老兵访谈</h3>
+                    <p>与革命老兵面对面交流，聆听亲历者讲述革命故事，传承红色记忆</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>快速加载</h3>
-                    <p>优化的代码结构，确保网站快速加载，提升用户体验</p>
+                    <div class="feature-icon">🤝</div>
+                    <h3>志愿服务</h3>
+                    <p>开展社区志愿服务活动，用实际行动践行为人民服务的宗旨</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速链接 -->
+    <section class="quick-links">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">探索更多</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <h3>📖 实践团队</h3>
+                    <p>了解我们的团队成员和组织架构</p>
+                    <a href="modern-website/about.html" class="link-btn">查看详情</a>
+                </div>
+                <div class="link-card">
+                    <h3>🎯 实践活动</h3>
+                    <p>详细了解我们的各项实践活动内容</p>
+                    <a href="modern-website/services.html" class="link-btn">查看详情</a>
+                </div>
+                <div class="link-card">
+                    <h3>🌟 完整展示</h3>
+                    <p>查看我们的完整实践成果展示</p>
+                    <a href="实践网站/index.html" class="link-btn">进入展示</a>
+                </div>
+                <div class="link-card">
+                    <h3>📞 联系我们</h3>
+                    <p>与我们取得联系，了解更多信息</p>
+                    <a href="modern-website/contact.html" class="link-btn">联系方式</a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
+        // 移动端菜单切换
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // 点击菜单项后关闭移动端菜单
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        }));
+
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
         });
     </script>
 </body>
+
 </html>
